@@ -1,8 +1,8 @@
-import logo from "../assets/investment-calculator.png";
+import logo from "../assets/investment-calculator-logo.png";
 
 export default function Header() {
   return (
-    <header>
+    <header id="header">
       <img src={logo} alt="Logo shwoing the inevstment calculator" />
       <h1>Investment calculator</h1>
     </header>
