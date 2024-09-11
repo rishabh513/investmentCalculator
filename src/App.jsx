@@ -11,6 +11,8 @@ function App() {
     duration: 10,
   });
 
+  const inputIsValid = userInput.duration >= 1;
+
   function handleChange(inputIdentifier, newvalue) {
     //now I want to update this change based on previous change
     //i want to update state based on previous state
@@ -30,7 +32,10 @@ function App() {
     <>
       <Header />
       <UserInput userInput={userInput} onChange={handleChange} />
-      <Results input={userInput} />
+      {!inputIsValid && (
+        <p className="center">Please enter a duration greater than 0</p>
+      )}
+      {inputIsValid && <Results input={userInput} />}
     </>
   );
 }
