@@ -17,11 +17,12 @@ export default function UserInput() {
     // updated state must depend on the old state
     //... copy old value into new object
     //inputiden will get string as a value
-    setUserInput(prevUserInput);
-    return {
-      ...prevUserInput,
-      [inputIdentifier]: newvalue,
-    };
+    setUserInput((prevUserInput) => {
+      return {
+        ...prevUserInput,
+        [inputIdentifier]: newvalue,
+      };
+    });
   }
 
   return (
